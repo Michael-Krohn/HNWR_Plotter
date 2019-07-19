@@ -8,7 +8,9 @@ git clone https://github.com/Michael-Krohn/HNWR_Plotter.git -b Run2Legacy_v3__De
 ```
 
 After creating the txt file with all of the limits within it following the instructions from here: https://github.com/Michael-Krohn/HiggsAnalysis-CombinedLimit/tree/HNWR/v8.0.1/HNWR_13TeV/2016
+
 Place the txt file in HNWR_Plotter/rootfiles/Run2Legacy_v3__Default/Limit/Asymptotic/2016/
+
 And modify the HNWR_Plotter/src/Draw_Limits.C script so that the new txt input file is being used
 
 To run the plotting script:
