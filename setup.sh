@@ -23,6 +23,15 @@ elif [[ $HOSTNAME == *"lxplus"* ]]; then
   alias pl='rsync -auv --delete-excluded output/'$CATANVERSION' '$WWW_PLOT_PATH
   alias plforce='rsync -auv -I --delete-excluded output/'$CATANVERSION' '$WWW_PLOT_PATH
 
+elif [[ $HOSTNAME == *"cmslpc"* ]]; then
+
+  echo 'Setup for cmslpc'
+#  echo 'ROOT_INCLUDE_PATH' $ROOT_INCLUDE_PATH
+
+  export PLOT_PATH=output/
+  export WWW_PLOT_PATH=/eos/user/j/jskim/www/HNWR_13TeV/
+  alias pl='rsync -auv --delete-excluded output/'$CATANVERSION' '$WWW_PLOT_PATH
+  alias plforce='rsync -auv -I --delete-excluded output/'$CATANVERSION' '$WWW_PLOT_PATH
 
 fi
 

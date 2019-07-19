@@ -6,9 +6,10 @@ void Draw_Limit(int Year){
   TString inputfile = "";
   TString TotalLumi = "";
   if(Year==2016){
-    inputfile = "2019_07_11_152140__FullCLs";
-    //inputfile = "2019_07_10_161251__Run2";
+    inputfile = "2019_07_18_212939__ReBinned";
+//    inputfile = "2019_07_11_152140__FullCLs";
     TotalLumi = "35.92 fb^{-1} (13 TeV)";
+//    TotalLumi = "137.4 fb^{-1} (13 TeV)";
   }
   else if(Year==2017){
     inputfile = "2019_04_02_093447__RunAll_sorted";
@@ -28,7 +29,7 @@ void Draw_Limit(int Year){
   latex_Lumi.SetTextSize(0.035);
   latex_Lumi.SetTextFont(42);
 
-  bool UseAsymptotic = false;
+  bool UseAsymptotic = true;
 
   TString Method = "FullCLs";
   if(UseAsymptotic) Method = "Asymptotic";
@@ -44,10 +45,13 @@ void Draw_Limit(int Year){
   TString dataset = getenv("CATANVERSION");
   TString ENV_PLOT_PATH = getenv("PLOT_PATH");
 
+  cout << "ENV_PLOT_PATH: " << ENV_PLOT_PATH << endl;
+
   TString filepath_result = WORKING_DIR+"/rootfiles/"+dataset+"/Limit/"+Method+"/"+TString::Itoa(Year,10)+"/"+inputfile+".txt";
-  cout << filepath_result << endl;
+  cout << "filepath_result: " << filepath_result << endl;
   TString plotpath = ENV_PLOT_PATH+"/"+dataset+"/Limit/"+Method+"/"+TString::Itoa(Year,10)+"/"+inputfile;
 
+  cout << "mkdir " << plotpath << endl;
   gSystem->mkdir(plotpath, kTRUE);
 
   TString filename_thoery = WORKING_DIR+"/data/"+dataset+"/xsec_190705_GenXsecAN_eeANDmm.txt";
@@ -471,6 +475,7 @@ void Draw_Limit(int Year){
     if(channel=="EE")        latex_ch.DrawLatex(0.05, 0.07, "ee");
     else if(channel=="MuMu") latex_ch.DrawLatex(0.05, 0.07, "#mu#mu");
 
+    cout << "saving files to: " << plotpath << endl;
     c_2D->SaveAs(plotpath+"/2D_"+channel+".pdf");
     c_2D->SaveAs(plotpath+"/2D_"+channel+".png");
     c_2D->Close();
