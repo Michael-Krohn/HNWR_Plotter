@@ -18,6 +18,6 @@ To run the plotting script:
 cd HNWR_Plotter/
 bash -l
 source setup.sh
-root -l -b -q "src/Draw_Limit(2016)"
+root -l -b -q "src/Draw_Limit_MN.C(2016)"
 ```
 
