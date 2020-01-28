@@ -355,11 +355,11 @@ void Draw_Limit_MN_Resolved(int Year){
 
             vec_wr.push_back( m.mass_WR );
             vec_n.push_back( m.mass_N );
-            vec_limit_exp.push_back( m.LimitResults.at(l).limit_exp  );
-            vec_limit_exp_1sdUp.push_back( m.LimitResults.at(l).limit_exp_1sdUp );
-            vec_limit_exp_1sdDn.push_back( m.LimitResults.at(l).limit_exp_1sdDn );
-            vec_limit_exp_2sdUp.push_back( m.LimitResults.at(l).limit_exp_2sdUp );
-            vec_limit_exp_2sdDn.push_back( m.LimitResults.at(l).limit_exp_2sdDn );
+            vec_limit_exp.push_back( m.LimitResults.at(l).limit_exp  * 10 );
+            vec_limit_exp_1sdUp.push_back( m.LimitResults.at(l).limit_exp_1sdUp * 10 );
+            vec_limit_exp_1sdDn.push_back( m.LimitResults.at(l).limit_exp_1sdDn * 10 );
+            vec_limit_exp_2sdUp.push_back( m.LimitResults.at(l).limit_exp_2sdUp * 10 );
+            vec_limit_exp_2sdDn.push_back( m.LimitResults.at(l).limit_exp_2sdDn * 10 );
 
 	    if(m.mass_WR/2 == m.mass_N){
 	      vec_wr_n_halfMass.push_back(m.mass_WR);
